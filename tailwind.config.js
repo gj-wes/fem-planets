@@ -17,5 +17,23 @@ module.exports = {
         spartan: ["'Spartan'", "sans-serif"],
       }
     }
-  }
+  },
+  safelist: [
+    'bg-mercury',
+    'bg-venus',
+    'bg-earth',
+    'bg-mars',
+    'bg-jupiter',
+    'bg-saturn',
+    'bg-uranus',
+    'bg-neptune',
+    'decoration-mercury',
+    'decoration-venus',
+    'decoration-earth',
+    'decoration-mars',
+    'decoration-jupiter',
+    'decoration-saturn',
+    'decoration-uranus',
+    'decoration-neptune',
+  ]
 }

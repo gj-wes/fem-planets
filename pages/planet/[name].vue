@@ -4,21 +4,21 @@
 <div class="border-b border-white [--tw-border-opacity:0.2] flex justify-center gap-10">
   <button 
     class="font-spartan uppercase text-white [--tw-text-opacity:0.5] font-bold text-xs tracking-widest py-5" 
-    :class="[selectedImage === 'overview' ? 'selected' : '']" 
+    :class="[selectedImage === 'overview' ? 'selected' : '', `decoration-${selectedPlanet.name.toLowerCase()}`]" 
     @click="selectedImage = 'overview'"
   >
     overview
   </button>
   <button 
     class="font-spartan uppercase text-white [--tw-text-opacity:0.5] font-bold text-xs tracking-widest py-5" 
-    :class="[selectedImage === 'structure' ? 'selected' : '']" 
+    :class="[selectedImage === 'structure' ? 'selected' : '', `decoration-${selectedPlanet.name.toLowerCase()}`]" 
     @click="selectedImage = 'structure'"
   >
     structure
   </button>
   <button 
     class="font-spartan uppercase text-white [--tw-text-opacity:0.5] font-bold text-xs tracking-widest py-5" 
-    :class="[selectedImage === 'surface' ? 'selected' : '']" 
+    :class="[selectedImage === 'surface' ? 'selected' : '', `decoration-${selectedPlanet.name.toLowerCase()}`]" 
     @click="selectedImage = 'surface'"
   >
     surface
@@ -83,6 +83,6 @@ useHead({
 
 <style scoped>
 .selected {
-  @apply underline decoration-4 decoration-mercury underline-offset-[1.35rem] [--tw-text-opacity:1]
+  @apply underline decoration-4 underline-offset-[1.35rem] [--tw-text-opacity:1]
 }
 </style>

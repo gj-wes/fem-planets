@@ -1,7 +1,9 @@
 <template>
-  <div class="min-h-screen bg-[#070724] text-white">
+  <div class="min-h-screen bg-[#070724] text-white relative">
     <!-- nav -->
     <TheNavbar />
-    <NuxtPage />
+    <main>
+      <NuxtPage />
+    </main>
   </div>
 </template>
