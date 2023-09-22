@@ -3,7 +3,7 @@
     <NuxtLink to="/" class="font-antonio text-2xl tracking-tighter uppercase">the planets</NuxtLink>
 
     <button @click="showMobileNav = !showMobileNav">
-      <img src="../assets/icon-hamburger.svg" alt="">
+      <img src="../assets/icon-hamburger.svg" alt="" :class="{ 'opacity-50':showMobileNav }">
     </button>
   </nav>
 
