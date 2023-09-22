@@ -2,27 +2,9 @@
 
 <!-- mobile tabs -->
 <div class="border-b border-white [--tw-border-opacity:0.2] flex justify-center gap-10">
-  <button 
-    class="font-spartan uppercase text-white [--tw-text-opacity:0.5] font-bold text-xs tracking-widest py-5" 
-    :class="[selectedInfo === 'overview' ? 'selected' : '', `decoration-${selectedPlanet.name.toLowerCase()}`]" 
-    @click="selectedInfo = 'overview'"
-  >
-    overview
-  </button>
-  <button 
-    class="font-spartan uppercase text-white [--tw-text-opacity:0.5] font-bold text-xs tracking-widest py-5" 
-    :class="[selectedInfo === 'structure' ? 'selected' : '', `decoration-${selectedPlanet.name.toLowerCase()}`]" 
-    @click="selectedInfo = 'structure'"
-  >
-    structure
-  </button>
-  <button 
-    class="font-spartan uppercase text-white [--tw-text-opacity:0.5] font-bold text-xs tracking-widest py-5" 
-    :class="[selectedInfo === 'geology' ? 'selected' : '', `decoration-${selectedPlanet.name.toLowerCase()}`]" 
-    @click="selectedInfo = 'geology'"
-  >
-    surface
-  </button>
+  <PlanetStatMobileTab :selected="selectedInfo" label="overview" :name="selectedPlanet.name" @click="selectedInfo = 'overview'"/>
+  <PlanetStatMobileTab :selected="selectedInfo" label="structure" :name="selectedPlanet.name" @click="selectedInfo = 'structure'"/>
+  <PlanetStatMobileTab :selected="selectedInfo" label="geology" :name="selectedPlanet.name" @click="selectedInfo = 'geology'"/>
 </div>
 
 <!-- planet -->
@@ -80,9 +62,3 @@ useHead({
   title: pathName
 })
 </script>
-
-<style scoped>
-.selected {
-  @apply underline decoration-4 underline-offset-[1.35rem] [--tw-text-opacity:1]
-}
-</style>
