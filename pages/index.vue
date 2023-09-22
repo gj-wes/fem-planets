@@ -5,7 +5,7 @@
 </template>
 
 <script setup lang="ts">
-const planets = usePlanetData();
+navigateTo('/planet/Mercury')
 
 </script>
 
