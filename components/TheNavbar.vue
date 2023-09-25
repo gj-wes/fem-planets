@@ -1,13 +1,14 @@
 <template>
-  <nav class="border-b border-white [--tw-border-opacity:0.2] py-4 px-6 md:py-8 flex justify-between items-center md:flex-col">
-    <NuxtLink to="/" class="font-antonio text-2xl tracking-tighter uppercase">the planets</NuxtLink>
+  <nav class="border-b border-white [--tw-border-opacity:0.2] py-4 px-6 md:py-8 lg:py-6 flex justify-between items-center md:flex-col lg:flex-row">
+    <NuxtLink to="/" class="font-antonio text-2xl lg:text-3xl tracking-tighter uppercase">the planets</NuxtLink>
 
-    <ul class="hidden md:flex gap-8 mt-6">
+    <ul class="hidden md:flex gap-8 mt-6 lg:mt-0">
       <li v-for="p in planets">
         <NuxtLink 
           :to="`/planet/${ p.name }`" 
           @click="showMobileNav = !showMobileNav"
-          class="font-spartan font-bold text-xs uppercase text-white [--tw-text-opacity:0.75] tracking-[1px]"
+          class="font-spartan font-bold text-xs uppercase text-white [--tw-text-opacity:0.75] tracking-[1px] hover:underline decoration-4 underline-offset-[-2.8rem]"
+          :class="[`decoration-${p.name.toLowerCase()}`]"
         >
           {{ p.name }}
         </NuxtLink>
