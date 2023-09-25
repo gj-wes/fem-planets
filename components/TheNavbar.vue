@@ -1,13 +1,25 @@
 <template>
-  <nav class="border-b border-white [--tw-border-opacity:0.2] py-4 px-6 flex justify-between items-center">
+  <nav class="border-b border-white [--tw-border-opacity:0.2] py-4 px-6 md:py-8 flex justify-between items-center md:flex-col">
     <NuxtLink to="/" class="font-antonio text-2xl tracking-tighter uppercase">the planets</NuxtLink>
 
-    <button @click="showMobileNav = !showMobileNav">
+    <ul class="hidden md:flex gap-8 mt-6">
+      <li v-for="p in planets">
+        <NuxtLink 
+          :to="`/planet/${ p.name }`" 
+          @click="showMobileNav = !showMobileNav"
+          class="font-spartan font-bold text-xs uppercase text-white [--tw-text-opacity:0.75] tracking-[1px]"
+        >
+          {{ p.name }}
+        </NuxtLink>
+      </li>
+    </ul>
+
+    <button @click="showMobileNav = !showMobileNav" class="md:hidden">
       <img src="../assets/icon-hamburger.svg" alt="" :class="{ 'opacity-50':showMobileNav }">
     </button>
   </nav>
 
-  <nav v-if="showMobileNav" class="bg-[#070724] absolute w-full h-full z-10 px-6 pt-10">
+  <nav v-if="showMobileNav" class="bg-[#070724] absolute w-full h-full z-10 px-6 pt-10 md:hidden">
     <ul>
       <li v-for="p in planets" class="border-b border-white [--tw-border-opacity:0.2] last:border-none py-5 first:pt-0">
         <NuxtLink 

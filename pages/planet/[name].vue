@@ -1,42 +1,46 @@
 <template>
-
 <!-- mobile tabs -->
-<div class="border-b border-white [--tw-border-opacity:0.2] flex justify-center gap-10">
+<div class="border-b border-white [--tw-border-opacity:0.2] flex justify-center gap-10 md:hidden">
   <PlanetStatMobileTab :selected="selectedInfo" label="overview" :name="selectedPlanet.name" @click="selectedInfo = 'overview'"/>
   <PlanetStatMobileTab :selected="selectedInfo" label="structure" :name="selectedPlanet.name" @click="selectedInfo = 'structure'"/>
   <PlanetStatMobileTab :selected="selectedInfo" label="geology" :name="selectedPlanet.name" @click="selectedInfo = 'geology'"/>
 </div>
 
 <!-- planet -->
-<div class="aspect-[5/4] flex justify-center items-center relative">
+<div class="aspect-[5/4] flex justify-center items-center relative md:max-w-5xl">
   <img v-if="selectedInfo !== 'structure'" :src="imagePaths.planet" alt="" class="max-w-[50%]">
-  <img v-if="selectedInfo === 'geology'" :src="imagePaths.geology" alt="" class="max-w-[20%] absolute bottom-2">
+  <img v-if="selectedInfo === 'geology'" :src="imagePaths.geology" alt="" class="max-w-[20%] absolute bottom-2 md:bottom-4">
   <img v-if="selectedInfo === 'structure'" :src="imagePaths.internal" alt="" class="max-w-[50%]">
 </div>
 
 <!-- name/copy/link -->
-<section class="text-center">
-  <h1 class="font-antonio text-4xl uppercase mb-4">
-    {{ selectedPlanet.name }}
-  </h1>
-  <p class="font-spartan text-sm leading-6 mb-8 mx-6">
-    {{ selectedPlanet[selectedInfo].content }}
-  </p>
-  <p class="font-spartan text-sm text-white [--tw-text-opacity:0.5] mb-8">
-    Source: <NuxtLink :to="selectedPlanet[selectedInfo].source"><span class="underline">Wikipedia</span> <img src="../../assets/icon-source.svg" class="inline"></NuxtLink>
-  </p>
+<section class="md:grid md:grid-cols-2 md:content-center md:max-w-5xl md:px-10">
+  <div class="text-center md:text-left">
+    <h1 class="font-antonio text-4xl uppercase mb-4">
+      {{ selectedPlanet.name }}
+    </h1>
+    <p class="font-spartan text-sm leading-6 mb-8 mx-6 md:ml-0">
+      {{ selectedPlanet[selectedInfo].content }}
+    </p>
+    <p class="font-spartan text-sm text-white [--tw-text-opacity:0.5] mb-8">
+      Source: <NuxtLink :to="selectedPlanet[selectedInfo].source"><span class="underline">Wikipedia</span> <img src="../../assets/icon-source.svg" class="inline"></NuxtLink>
+    </p>
+  </div>
+
+  <!-- non-mobile buttons -->
+  <div class="hidden md:grid gap-4 content-center">
+    <PlanetStatButton :selected="selectedInfo" label="overview" :name="selectedPlanet.name" number="01" @click="selectedInfo = 'overview'"/>
+    <PlanetStatButton :selected="selectedInfo" label="structure" :name="selectedPlanet.name" number="02" @click="selectedInfo = 'structure'"/>
+    <PlanetStatButton :selected="selectedInfo" label="geology" :name="selectedPlanet.name" number="03"  @click="selectedInfo = 'geology'"/>
+  </div>
 </section>
 
-<!-- non-mobile buttons -->
-
-
-
-<div class="space-y-2 px-6 pb-10">
+<section class="space-y-2 md:space-y-0 px-6 pb-10 md:grid md:gap-3 md:grid-cols-4 md:max-w-5xl md:px-10">
   <PlanetStatBox label="rotation time" :stat="selectedPlanet.rotation"/>
   <PlanetStatBox label="revolution time" :stat="selectedPlanet.revolution"/>
   <PlanetStatBox label="radius" :stat="selectedPlanet.radius"/>
   <PlanetStatBox label="average temp." :stat="selectedPlanet.temperature"/>
-</div>
+</section>
 </template>
 
 <script setup lang="ts">
