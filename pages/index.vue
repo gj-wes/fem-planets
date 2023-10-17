@@ -12,7 +12,7 @@ useHead({
       <li v-for="p in planets" class="min-w-full snap-center grid py-20 lg:min-w-min">
         <NuxtLink 
           :to="`/planet/${ p.name }`" 
-          class="self-center"
+          class="self-end"
         >
           <img :src="p.images.planet" :alt="p.name" class="max-w-[80%] mx-auto">
         </NuxtLink>
