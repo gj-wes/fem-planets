@@ -1,75 +1,25 @@
-# Nuxt 3 Minimal Starter
+# Frontend Mentor - Planets fact site solution
 
-Look at the [Nuxt 3 documentation](https://nuxt.com/docs/getting-started/introduction) to learn more.
+This is a solution to the [Planets fact site challenge on Frontend Mentor](https://www.frontendmentor.io/challenges/planets-fact-site-gazqN8w_f).
 
-## Setup
+## Overview
 
-Make sure to install the dependencies:
+### The challenge
 
-```bash
-# npm
-npm install
+Users should be able to:
 
-# pnpm
-pnpm install
+- View the optimal layout for the app depending on their device's screen size
+- See hover states for all interactive elements on the page
+- View each planet page and toggle between "Overview", "Internal Structure", and "Surface Geology"
 
-# yarn
-yarn install
+## My process
 
-# bun
-bun install
-```
+### Built with
 
-## Development Server
+- Nuxt
+- Tailwind
 
-Start the development server on `http://localhost:3000`:
+### Extras
 
-```bash
-# npm
-npm run dev
-
-# pnpm
-pnpm run dev
-
-# yarn
-yarn dev
-
-# bun
-bun run dev
-```
-
-## Production
-
-Build the application for production:
-
-```bash
-# npm
-npm run build
-
-# pnpm
-pnpm run build
-
-# yarn
-yarn build
-
-# bun
-bun run build
-```
-
-Locally preview production build:
-
-```bash
-# npm
-npm run preview
-
-# pnpm
-pnpm run preview
-
-# yarn
-yarn preview
-
-# bun
-bun run preview
-```
-
-Check out the [deployment documentation](https://nuxt.com/docs/getting-started/deployment) for more information.
+- Added some minor animations and transitions
+- Added a planet list on index view, mainly to try out scroll-snapping
