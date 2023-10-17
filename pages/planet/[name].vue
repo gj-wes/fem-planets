@@ -9,9 +9,9 @@
 <div class="lg:grid lg:grid-cols-[auto_350px] md:max-w-5xl md:mx-auto md:px-10 lg:px-0 lg:mt-32 animate-fadein">
   <!-- planet -->
   <div class="aspect-[5/4] flex justify-center items-center relative">
-    <img v-if="selectedInfo !== 'structure'" :src="imagePaths.planet" alt="" class="max-w-[50%]">
-    <img v-if="selectedInfo === 'geology'" :src="imagePaths.geology" alt="" class="max-w-[20%] absolute bottom-2 md:bottom-4">
-    <img v-if="selectedInfo === 'structure'" :src="imagePaths.internal" alt="" class="max-w-[50%]">
+    <img v-if="selectedInfo !== 'structure'" :src="imagePaths.planet" alt="" class="max-w-[50%] animate-fadein">
+    <img v-if="selectedInfo === 'geology'" :src="imagePaths.geology" alt="" class="max-w-[20%] absolute bottom-2 md:bottom-4 animate-fadein">
+    <img v-if="selectedInfo === 'structure'" :src="imagePaths.internal" alt="" class="max-w-[50%] animate-fadein">
   </div>
   
   <!-- name/copy/link -->
