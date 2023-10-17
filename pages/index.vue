@@ -9,7 +9,7 @@ useHead({
 <template>
   <div>
     <ul class="flex gap-8 lg:gap-4 overflow-x-auto snap-x snap-mandatory lg:snap-none lg:max-w-7xl lg:mx-auto lg:px-4">
-      <li v-for="p in planets" class="min-w-full snap-center grid py-20 lg:min-w-min">
+      <li v-for="p in planets" class="min-w-full snap-center grid py-20 lg:min-w-min animate-fadein">
         <NuxtLink 
           :to="`/planet/${ p.name }`" 
           class="self-end"

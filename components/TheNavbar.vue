@@ -22,9 +22,9 @@
     </div>
   </nav>
 
-  <nav v-if="showMobileNav" class="bg-[#070724] absolute w-full h-full z-10 px-6 pt-10 md:hidden">
+  <nav v-if="showMobileNav" class="bg-[#070724] absolute w-full h-full z-10 px-6 pt-10 md:hidden animate-fadein">
     <ul>
-      <li v-for="p in planets" class="border-b border-white [--tw-border-opacity:0.2] last:border-none py-5 first:pt-0">
+      <li v-for="p,i in planets" :key="i" class="border-b border-white [--tw-border-opacity:0.2] last:border-none py-5 first:pt-0 slideFromLeft" :style="{ '--d': i }">
         <NuxtLink 
           :to="`/planet/${ p.name }`" 
           @click="showMobileNav = !showMobileNav"
@@ -43,3 +43,15 @@
 const planets = usePlanetData()
 const showMobileNav = ref(false)
 </script>
+
+<style scoped>
+.slideFromLeft {
+  transform: translateX(-110%);
+  animation: slide .3s ease-in forwards;
+  animation-delay: calc(var(--d) * 0.1s);
+}
+
+@keyframes slide {
+  to { transform: translateX(0) }
+}
+</style>

@@ -15,6 +15,15 @@ module.exports = {
       fontFamily: {
         antonio: ["'Antonio'", "sans-serif"],
         spartan: ["'Spartan'", "sans-serif"],
+      },
+      keyframes: {
+        fadeIn: {
+          "0%": { opacity: "0" },
+          "100%": { opacity: "1" }
+        }
+      },
+      animation: {
+        fadein: "fadeIn 0.3s linear forwards",
       }
     }
   },

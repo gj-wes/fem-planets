@@ -6,7 +6,7 @@
   <PlanetStatMobileTab :selected="selectedInfo" label="geology" :name="selectedPlanet.name" @click="selectedInfo = 'geology'"/>
 </div>
 
-<div class="lg:grid lg:grid-cols-[auto_350px] md:max-w-5xl md:mx-auto md:px-10 lg:px-0 lg:mt-32">
+<div class="lg:grid lg:grid-cols-[auto_350px] md:max-w-5xl md:mx-auto md:px-10 lg:px-0 lg:mt-32 animate-fadein">
   <!-- planet -->
   <div class="aspect-[5/4] flex justify-center items-center relative">
     <img v-if="selectedInfo !== 'structure'" :src="imagePaths.planet" alt="" class="max-w-[50%]">
